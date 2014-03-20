@@ -14,8 +14,8 @@ FTP_TARGET_DIR=/
 
 SSH_HOST=scf-ug01.berkeley.edu
 SSH_PORT=22
-SSH_USER=millman
-SSH_TARGET_DIR=/mirror/private/millman
+SSH_USER=bdherin
+SSH_TARGET_DIR=/mirror/private/bdherin
 
 S3_BUCKET=my_s3_bucket
 
@@ -24,6 +24,8 @@ CLOUDFILES_API_KEY=my_rackspace_api_key
 CLOUDFILES_CONTAINER=my_cloudfiles_container
 
 DROPBOX_DIR=~/Dropbox/Public/
+
+GITHUB_REPOSITORY=https://github.com/BenoitDherin/blackboard-scribbles.git
 
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
@@ -101,12 +103,13 @@ s3_upload: publish
 cf_upload: publish
 	cd $(OUTPUTDIR) && swift -v -A https://auth.api.rackspacecloud.com/v1.0 -U $(CLOUDFILES_USERNAME) -K $(CLOUDFILES_API_KEY) upload -c $(CLOUDFILES_CONTAINER) .
 
-github2: publish
-	ghp-import $(OUTPUTDIR)
-	git push git@github.com:berkeley-stat133/berkeley-stat133.github.io.git gh-pages:master
+#github2: publish
+	#ghp-import $(OUTPUTDIR)
+	#git push git@github.com:berkeley-stat133/berkeley-stat133.github.io.git gh-pages:master
 
 github: publish
 	ghp-import $(OUTPUTDIR)
-	git push https://github.com/berkeley-stat133/berkeley-stat133.github.io.git gh-pages:master
+	#git push https://github.com/berkeley-stat133/berkeley-stat133.github.io.git gh-pages:master --force
+	git push $(GITHUB_REPOSITORY) gh-pages:master --force
 
 .PHONY: html help clean regenerate serve devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github

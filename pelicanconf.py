@@ -3,9 +3,9 @@
 from __future__ import unicode_literals
 import os
 
-AUTHOR = u'Jarrod Millman'
-SITENAME = u"UC Berkeley's Statistics 133"
-SITESUBTITLE = u'Concepts in Computing with Data (Spring 2014)'
+AUTHOR = u'Benoit Dherin'
+SITENAME = u"iPython Notebook Scribbles"
+SITESUBTITLE = u''
 SITEURL = '' # change in publishconf.py
 
 TIMEZONE = 'US/Pacific'
