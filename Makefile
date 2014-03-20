@@ -110,6 +110,7 @@ cf_upload: publish
 github: publish
 	ghp-import $(OUTPUTDIR)
 	#git push https://github.com/berkeley-stat133/berkeley-stat133.github.io.git gh-pages:master --force
-	git push $(GITHUB_REPOSITORY) gh-pages:master --force
+	#git push $(GITHUB_REPOSITORY) gh-pages:master --force
+	git push origin gh-pages --force
 
 .PHONY: html help clean regenerate serve devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github
