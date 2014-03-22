@@ -21,19 +21,20 @@ TRANSLATION_FEED_ATOM = None
 DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_PAGES_ON_MENU = True
 #MENUITEMS = [('Course Information', 'http://berkeley-stat133.github.io/pages/info.html'),
-#             ('Syllabus', 'http://berkeley-stat133.github.io/pages/syllabus.html'),
-#             ('Lectures', 'http://berkeley-stat133.github.io/pages/lectures.html'),
-#             ('Labs', 'http://berkeley-stat133.github.io/pages/labs.html'),
-#             ('Cloud', 'http://berkeley-stat133.github.io/pages/cloud.html'),
-#             ('Assignments', 'http://berkeley-stat133.github.io/pages/assignments.html'),]
+             #('Assignments', 'http://berkeley-stat133.github.io/pages/assignments.html'),]
 
 DISPLAY_TAGS_ON_SIDEBAR = False
 
 # Blogroll
-LINKS =  (('Course website', 'http://nbviewer.ipython.org/urls/db.tt/IPY60OHY?create=1'),
-          ('Github', 'https://github.com/berkeley-stat133'),
-          ('PTHW', 'http://learnpythonthehardway.org'),
-          ('Software Carpentry', 'http://software-carpentry.org'),)
+#LINKS =  (('Course website', 'http://nbviewer.ipython.org/urls/db.tt/IPY60OHY?create=1'),
+#          ('Github', 'https://github.com/berkeley-stat133'),
+#          ('PTHW', 'http://learnpythonthehardway.org'),
+#          ('Software Carpentry', 'http://software-carpentry.org'),)
+
+LINKS =  (('Introduction', 'introduction'),
+          ('Statements', 'statements'),)
+# Social widget
+
 # Social widget
 #SOCIAL = (('Github', 'https://github.com/berkeley-stat133'),)
 
