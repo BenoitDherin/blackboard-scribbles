@@ -3,7 +3,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>iPython Notebook Scribbles - Tags</title>
+    <title>Scripts</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -1717,10 +1717,10 @@ init_mathjax();
 
 
     <!-- Open Graph tags -->
-            <meta property="og:type" content="website"/>
-            <meta property="og:title" content="iPython Notebook Scribbles"/>
-            <meta property="og:url" content="http://benoitdherin.github.io/blackboard-scribbles"/>
-            <meta property="og:description" content="iPython Notebook Scribbles"/>
+            <meta property="og:type" content="article"/>
+            <meta property="og:title" content="Scripts"/>
+            <meta property="og:url" content="http://benoitdherin.github.io/blackboard-scribbles/scripts.html"/>
+            <meta property="og:description" content="Scripts¶ Definition: A script is a collection of instructions written in a given interpreted programming language such as Bash, Python, or R) and gathered in a text file. If given a script, the corresponding interpreter (such as the Bash interpreter, the Python interpreter, or the R interpreter) will execute all ..."/>
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="http://benoitdherin.github.io/blackboard-scribbles/theme/css/bootstrap.min.css" type="text/css"/>
@@ -1787,11 +1787,384 @@ iPython Notebook Scribbles            </a>
     <div class="row">
         <div class="col-sm-9">
 
-    <section id="tags">
-        <h1>Tags for iPython Notebook Scribbles</h1>
-        <div class="panel-group" id="accordion">        </div>
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://benoitdherin.github.io/blackboard-scribbles/scripts.html"
+                       rel="bookmark"
+                       title="Permalink to Scripts">
+                        Scripts
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-03-19T00:00:00">Wed 19 March 2014</time>
+    </span>
 
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Scripts">Scripts<a class="anchor-link" href="#Scripts">&#182;</a></h1>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Definition:</strong> A <em>script</em> is a collection of instructions written in a given interpreted programming language such as Bash, Python, or R) and gathered in a text file. If given a script, the corresponding interpreter (such as the Bash interpreter, the Python interpreter, or the R interpreter) will execute all the instructions contained in the script in order from the first line to the last line. In other words, a script is a <em>program</em> that is written in an interpreted programming language (as opposed to <em>compiled</em> programming language such as C, C++, and Java).</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Usually, one choose a <em>text editor</em> (such as vi, emacs, gedit, notepad, etc. ) to write a script. Then one invoke the interpreter on the script by typing the interpreter name on the command line, followed by the path indicating where the script file is located. For instance:</p>
+<pre><code>bash MyScript.sh
+python MyScript.py
+Rscript MyScript.R</code></pre>
+<p>In this notebook, we will also learn how to use the ipython notebook as an editor to write your script from it, and how to run them from within the notebook.</p>
+<p><strong>Remark:</strong> The file extension .sh, .py, .R etc. in the script file names above are just conventions; it is not needed by the interpreter in order to execute the script. It's just nice, since you know the programming language just by looking at the file name.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="The-notebook-as-an-editor">The notebook as an editor<a class="anchor-link" href="#The-notebook-as-an-editor">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-notebook-editor">The notebook editor<a class="anchor-link" href="#The-notebook-editor">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The notebook editor is called by using the magic command</p>
+<pre><code>%%file filename</code></pre>
+<p>at the beginning of a code cell.</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[1]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">file</span> <span class="n">MyScript</span><span class="o">.</span><span class="n">py</span>
+
+<span class="k">print</span> <span class="s">&#39;Hellow world&#39;</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+Writing MyScript.py
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Running-the-script-from-the-notebook">Running the script from the notebook<a class="anchor-link" href="#Running-the-script-from-the-notebook">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Two solutions:</p>
+<p><em>Solution 1</em> involve using a bash cell:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[2]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">bash</span>
+<span class="n">python</span> <span class="n">MyScript</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+Hellow world
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Solution 2:</em> Use the magic command</p>
+<pre><code>%run</code></pre>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[3]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%</span><span class="k">run</span> <span class="n">MyScript</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+Hellow world
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Script-input-and-output">Script input and output<a class="anchor-link" href="#Script-input-and-output">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A script can be seen as one of the programming embodiments of the mathematical idea of a mathematical function; that is, a recipe \(f\), denoted in math using the expressive arrow symbologism \(f:A\rightarrow B\), that knows how to transform any element \(a\in A\) from an input set \(A\) into an output element \(f(b)\in B\) belonging to an output set \(B\). (Later on, we will see that there is a also a notion of function in Python, which can be used withing scripts, and which can be regarded as mini-scripts withing scripts).</p>
+<p>The main difference between mathematical functions and their programmatic embodiements is that in programming the input set can be split into different &quot;physical&quot; components. For instance, a script can take its arguements from a default place called the <em>standard input</em>, as well as from files stored on the file system (or the internet) and command parameters. Here is a drawing summarizing the various input and output source for a script:</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="figure">
+<img src="https://docs.google.com/drawings/d/1XAy4oynhK8Sj4jr5kDSGtYzqLJk_tRizUhipw-0cqV8/pub?w=960&amp;amp;h=720" alt="Input and Output Sources" /><p class="caption">Input and Output Sources</p>
+</div>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Input-from-command-parameters">Input from command parameters<a class="anchor-link" href="#Input-from-command-parameters">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Import the <code>argv</code> predifined list from the module <code>sys</code>:</p>
+<pre><code>from sys import argv</code></pre>
+<p>Then unpack the command arguments as in the example above.</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[21]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">file</span> <span class="n">MyScript</span><span class="o">.</span><span class="n">py</span>
+
+<span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">argv</span>
+
+<span class="n">arg0</span><span class="p">,</span> <span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="n">arg3</span><span class="p">,</span> <span class="n">arg4</span><span class="p">,</span> <span class="n">arg6</span> <span class="o">=</span> <span class="n">argv</span>
+
+<span class="k">print</span> <span class="n">arg3</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+Overwriting MyScript.py
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Input-and-output-from-files">Input and output from files<a class="anchor-link" href="#Input-and-output-from-files">&#182;</a></h3>
+</div>
+
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[26]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">bash</span>
+<span class="n">echo</span> <span class="s">&#39;Hello I am the data in the file!&#39;</span> <span class="o">&gt;</span> <span class="n">inputData</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[36]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">file</span> <span class="n">FileInPutOutPutEx</span><span class="o">.</span><span class="n">py</span>
+
+<span class="n">inputFile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;inputData.txt&#39;</span><span class="p">)</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">inputFile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="n">outputFile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;output.txt&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
+
+<span class="n">outputFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="n">outputFile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+Overwriting FileInPutOutPutEx.py
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[37]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%</span><span class="k">run</span> <span class="n">FileInPutOutPutEx</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Standard-input,-output,-and-error-streams:-stdin,-stdout,-stderror">Standard input, output, and error streams: stdin, stdout, stderror<a class="anchor-link" href="#Standard-input,-output,-and-error-streams:-stdin,-stdout,-stderror">&#182;</a></h3>
+</div>
+
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[52]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">file</span> <span class="n">stdExample</span><span class="o">.</span><span class="n">py</span>
+
+<span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">stdin</span><span class="p">,</span> <span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span>
+
+<span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;Hello&#39;</span><span class="p">)</span>
+
+<span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;Aie! Aie! Aie! Big catastroph! Deadly mistake&#39;</span><span class="p">)</span>
+
+<span class="n">stdout</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+Overwriting stdExample.py
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[53]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%</span><span class="k">run</span> <span class="n">stdExample</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+Hello
+</pre>
+</div>
+</div>
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stderr">
+<pre>
+Aie! Aie! Aie! Big catastroph! Deadly mistake
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb">
+</pre></div>
+
+</div>
+</div>
+
+</div></p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
     </section>
+
         </div>
         <div class="col-sm-3 well well-sm" id="sidebar">
 

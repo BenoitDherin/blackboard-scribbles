@@ -3,7 +3,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>iPython Notebook Scribbles - Tags</title>
+    <title>Functions</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -1717,10 +1717,10 @@ init_mathjax();
 
 
     <!-- Open Graph tags -->
-            <meta property="og:type" content="website"/>
-            <meta property="og:title" content="iPython Notebook Scribbles"/>
-            <meta property="og:url" content="http://benoitdherin.github.io/blackboard-scribbles"/>
-            <meta property="og:description" content="iPython Notebook Scribbles"/>
+            <meta property="og:type" content="article"/>
+            <meta property="og:title" content="Functions"/>
+            <meta property="og:url" content="http://benoitdherin.github.io/blackboard-scribbles/functions.html"/>
+            <meta property="og:description" content="Functions¶ Function definition¶ Definition: A function in Python is the programmatic realization of the idea of a math function \(f:A \rightarrow B\), that is, a rule that tells you how to associate any value \(a\) in an input set a unique value \(b\) in an output set. Example: Consider ..."/>
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="http://benoitdherin.github.io/blackboard-scribbles/theme/css/bootstrap.min.css" type="text/css"/>
@@ -1787,11 +1787,467 @@ iPython Notebook Scribbles            </a>
     <div class="row">
         <div class="col-sm-9">
 
-    <section id="tags">
-        <h1>Tags for iPython Notebook Scribbles</h1>
-        <div class="panel-group" id="accordion">        </div>
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://benoitdherin.github.io/blackboard-scribbles/functions.html"
+                       rel="bookmark"
+                       title="Permalink to Functions">
+                        Functions
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-03-19T00:00:00">Wed 19 March 2014</time>
+    </span>
 
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Functions">Functions<a class="anchor-link" href="#Functions">&#182;</a></h1>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Function-definition">Function definition<a class="anchor-link" href="#Function-definition">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Definition:</strong> A function in Python is the programmatic realization of the idea of a math function \(f:A \rightarrow B\), that is, a rule that tells you how to associate any value \(a\) in an <em>input set</em> a <em>unique value</em> \(b\) in an <em>output set</em>.</p>
+<p><strong>Example:</strong> Consider the math function \(f:\mathbb R\rightarrow \mathbb R\) given by</p>
+<p>\[f(x) = \cos(x) e^{-\frac{x^2}{5}}.\]</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[11]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">exp</span><span class="p">,</span> <span class="n">cos</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In Python, one way to define a function is by using the following construct:</p>
+<pre><code>def function_name(arg1, arg2, arg3):
+    instruction 1
+    instruction 2
+    instruction 3
+    return z</code></pre>
+<p>The <strong>input</strong> of the function \(f\) is the argements arg1, arg2, arg3, and the <strong>output</strong> of \(f\) is <strong>whatever comes after the keyword</strong> <code>return</code>.</p>
+<p><strong>Remark:</strong> If not the function does not have a <code>return</code> instruction, then <strong>nothing is returned!!!!</strong></p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[27]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mf">5.0</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">z</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[31]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Function-call">Function call<a class="anchor-link" href="#Function-call">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A <strong>function call</strong> is an expression of the form</p>
+<pre><code>function_name(val1, val2, val3)</code></pre>
+<p>where now <code>val1, val2, val3</code> are concrete values and not <em>parameters</em>. The interpreter evaluates a function call by <strong>replacing the function call by the function output.</strong></p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[24]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">z</span> <span class="o">=</span> <span class="n">g</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+404.350720472
+-0.0266439546028
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[25]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">y</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[26]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">z</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Function-Compostion">Function Compostion<a class="anchor-link" href="#Function-Compostion">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In math, if you have two functions \(f:A\rightarrow B\) and \(g:B\rightarrow C\), you can compose these functions by appliying first \(f\) to and element \(a\in A\) and then the second function \(g\) to the output \(f(a)\in B\). The result is a <em>new function</em> called the <em>composition</em>: \(g \circ f(a):= g(f(a))\) yielding the function \(g\circ f:A \rightarrow C\).</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In Python (and in any other programming languages), one composes function the same way:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[32]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">f</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">))))</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[32]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+0.00040507051471082436
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Print-and-return">Print and return<a class="anchor-link" href="#Print-and-return">&#182;</a></h2>
+</div>
+
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[36]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="k">def</span> <span class="nf">noReturnFct</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">print</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+    <span class="k">return</span> <span class="s">&#39;My grandma&#39;</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[37]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">z</span> <span class="o">=</span> <span class="n">noReturnFct</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+17
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[38]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">z</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[38]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+&apos;My grandma&apos;
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb">
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Main-parameter-and-options">Main parameter and options<a class="anchor-link" href="#Main-parameter-and-options">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can separate the parameter of function in two types:</p>
+<ul>
+<li><p>main parameters, that are required for the function to work: it's the <strong>INPUT</strong></p></li>
+<li><p>optional parameter, that are not required, and that customize the function behaviour: they are the <strong>OPTIONS</strong></p></li>
+</ul>
+<p><em>Remark:</em> Optional parameter are not required because they have <strong>default values</strong></p>
+<pre><code>f(x, option1=value1, option2=value2, etc.)</code></pre>
+<p>If the function call is as follows:</p>
+<pre><code>f(4)</code></pre>
+<p>then, behind the scene, Python calls the function with the default arguments</p>
+<pre><code>f(4, value1, value2)</code></pre>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[3]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">exp</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">mu</span><span class="o">**</span><span class="n">x</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="n">mu</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The function above represent the family of functions</p>
+<p>\[ f_\mu (x) = \mu^x\exp(\mu x),\]</p>
+<p>where \(x\) is the function input and \(\mu\) is the family parameter.</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[4]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">f</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[4]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+54.598150033144236
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[5]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">f</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[5]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+13183138.104939317
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[6]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">f</span><span class="p">(</span><span class="n">mu</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_pyerr">
+<pre>
+<span class="ansicyan">  File </span><span class="ansigreen">&quot;&lt;ipython-input-6-a6e77dadcf33&gt;&quot;</span><span class="ansicyan">, line </span><span class="ansigreen">1</span>
+<span class="ansired">    f(mu=3, 4)</span>
+<span class="ansired">SyntaxError</span><span class="ansired">:</span> non-keyword arg after keyword arg
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[7]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">f</span><span class="p">(</span><span class="n">mu</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[7]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+13183138.104939317
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div></p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
     </section>
+
         </div>
         <div class="col-sm-3 well well-sm" id="sidebar">
 

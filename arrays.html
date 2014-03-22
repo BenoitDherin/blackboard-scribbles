@@ -3,7 +3,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>iPython Notebook Scribbles - Tags</title>
+    <title>Arrays</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -1717,10 +1717,10 @@ init_mathjax();
 
 
     <!-- Open Graph tags -->
-            <meta property="og:type" content="website"/>
-            <meta property="og:title" content="iPython Notebook Scribbles"/>
-            <meta property="og:url" content="http://benoitdherin.github.io/blackboard-scribbles"/>
-            <meta property="og:description" content="iPython Notebook Scribbles"/>
+            <meta property="og:type" content="article"/>
+            <meta property="og:title" content="Arrays"/>
+            <meta property="og:url" content="http://benoitdherin.github.io/blackboard-scribbles/arrays.html"/>
+            <meta property="og:description" content="Definition: A multidimensional array \(A\) of dimension \(d\) is a collection of individual data points indexed by \(n\) numbers: i.e., an individual data point is denoted by \[A[i_1, i_2, \dots, i_d]\] where \(i_l = 1,\dots, n_l\) is the index corresponding to the \(l\) axis, and where \(n_l\) is ..."/>
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="http://benoitdherin.github.io/blackboard-scribbles/theme/css/bootstrap.min.css" type="text/css"/>
@@ -1787,11 +1787,968 @@ iPython Notebook Scribbles            </a>
     <div class="row">
         <div class="col-sm-9">
 
-    <section id="tags">
-        <h1>Tags for iPython Notebook Scribbles</h1>
-        <div class="panel-group" id="accordion">        </div>
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://benoitdherin.github.io/blackboard-scribbles/arrays.html"
+                       rel="bookmark"
+                       title="Permalink to Arrays">
+                        Arrays
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-03-19T00:00:00">Wed 19 March 2014</time>
+    </span>
 
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Definition:</strong> A <em>multidimensional array</em> \(A\) of <em>dimension</em> \(d\) is a collection of individual data points indexed by \(n\) numbers: i.e., an individual data point is denoted by</p>
+<p>\[A[i_1, i_2, \dots, i_d]\]</p>
+<p>where \(i_l = 1,\dots, n_l\) is the index corresponding to the \(l\) axis, and where \(n_l\) is the number of data points stored along the \(l\) axis.</p>
+<p>The <em>shape</em> of an array is the tuple</p>
+<p>\[(n_1,\dots,n_d).\]</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Remark 1:</strong> The dimension above is different from the notion of dimension in linear algebra, which is the number of entries in the array (i.e. \(n_1n_2\dots n_d\)).</p>
+<p><strong>Remark 2:</strong> The dimension in the definition above emphasis the fact that a multidimensional array of dimension \(d\) can be geometrically regarded as a \(d\) dimensinal cube of numbers sitting in \(\mathbb R^d\).</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="figure">
+<img src="http://www.oracle.com/ocom/groups/public/%40otn/documents/digitalasset/105005.gif" alt="data cube 2" /><p class="caption">data cube 2</p>
+</div>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Nested-list-representation">Nested list representation<a class="anchor-link" href="#Nested-list-representation">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="1D-array-of-numerical-observations">1D array of numerical observations<a class="anchor-link" href="#1D-array-of-numerical-observations">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Construct a list by enumerating its elements</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[5]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Construct a list by comprehension</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[6]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="2D-array-(or-matrix)">2D array (or matrix)<a class="anchor-link" href="#2D-array-(or-matrix)">&#182;</a></h3>
+</div>
+
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[7]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">A</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span> <span class="p">]</span>
+<span class="n">A</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[7]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+[[1, 2, 3], [4, 5, 6]]
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[8]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[8]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+[1, 2, 3]
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[9]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[9]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+2
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="3D-arrays">3D arrays<a class="anchor-link" href="#3D-arrays">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Nest one more level of list</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Shortcomings:</strong></p>
+<ul>
+<li>indexing</li>
+<li>methods act on the first level</li>
+<li>speed for big data</li>
+<li>basic arithmetic and statistic operation missing</li>
+</ul>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[9]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb">
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Numpy-multidimensional-arrays">Numpy multidimensional arrays<a class="anchor-link" href="#Numpy-multidimensional-arrays">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Constructor">Constructor<a class="anchor-link" href="#Constructor">&#182;</a></h3>
+</div>
+
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[10]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">array</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To instanciate an numpy array, you may pass to its constructor a representation of your multidimensional array in terms of nested lists.</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[11]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">Arr</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">Arr</span>
+<span class="k">print</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span>
+<span class="k">print</span> <span class="n">A</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+[[1 2 3]
+ [4 5 6]]
+
+
+[[1, 2, 3], [4, 5, 6]]
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Numpy construct 2D arrays from nested lists \([a_1,\dots, a_m]\), where \(a_i=[a_{i1},\dots, a_{in}]\) by interpreting the list elements \(a_i\) as the <strong>rows</strong> of the resulting 2D array: this is the <em>row-major</em> convention. (R will follow the <em>column-major</em> convention).</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The array constructor has several optional argument customizing the behaviour of the array object that it creates. The most important for us is the <code>dtype</code> argument, which can take among many possible values the two following ones:</p>
+<ul>
+<li><code>float64</code> for real numbers</li>
+<li><code>int64</code> for integers</li>
+</ul>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[23]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">a</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]]</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="s">&quot;float64&quot;</span><span class="p">)</span>
+<span class="n">A</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[23]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+array([[ 1.,  2.,  3.],
+       [ 4.,  5.,  6.]])
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Remarks:</strong> If one tries to assign (using the bracket opearator) a new value to an array component</p>
+<pre><code>A[i,j] = val</code></pre>
+<p>python will try to convert <code>val</code> to an object of the <code>dtype</code> class (whose name isstored as an attribute of the array object:</p>
+<pre><code>A.dtype</code></pre>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Operations-and-methods">Operations and methods<a class="anchor-link" href="#Operations-and-methods">&#182;</a></h3>
+</div>
+
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[28]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+
+<span class="n">B</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+
+<span class="n">B</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[28]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+(8,)
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Caution:</strong> The <code>reshape</code> methode returns an new array with desired shape, but does not modify the original array!</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[35]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">C</span> <span class="o">=</span> <span class="n">B</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[28]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">Barr</span> <span class="o">=</span> <span class="n">Arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">Barr</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[28]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+array([[1, 2, 3, 4, 5, 6]])
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[25]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">Arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[25]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+array([[1, 2],
+       [3, 4],
+       [5, 6]])
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[34]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">C</span> <span class="o">=</span> <span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">25</span><span class="p">)])</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[33]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">C</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[33]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+(5, 5)
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Subsetting-and-indexing">Subsetting and indexing<a class="anchor-link" href="#Subsetting-and-indexing">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Scalar-indexing-(or-subsetting)">Scalar indexing (or subsetting)<a class="anchor-link" href="#Scalar-indexing-(or-subsetting)">&#182;</a></h3>
+</div>
+
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[46]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">linspace</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[51]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">A</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">A</span><span class="o">.</span><span class="n">size</span>
+
+<span class="n">A</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[51]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+array([[   0.        ,    1.01010101,    2.02020202,    3.03030303,
+           4.04040404,    5.05050505,    6.06060606,    7.07070707,
+           8.08080808,    9.09090909],
+       [  10.1010101 ,   11.11111111,   12.12121212,   13.13131313,
+          14.14141414,   15.15151515,   16.16161616,   17.17171717,
+          18.18181818,   19.19191919],
+       [  20.2020202 ,   21.21212121,   22.22222222,   23.23232323,
+          24.24242424,   25.25252525,   26.26262626,   27.27272727,
+          28.28282828,   29.29292929],
+       [  30.3030303 ,   31.31313131,   32.32323232,   33.33333333,
+          34.34343434,   35.35353535,   36.36363636,   37.37373737,
+          38.38383838,   39.39393939],
+       [  40.4040404 ,   41.41414141,   42.42424242,   43.43434343,
+          44.44444444,   45.45454545,   46.46464646,   47.47474747,
+          48.48484848,   49.49494949],
+       [  50.50505051,   51.51515152,   52.52525253,   53.53535354,
+          54.54545455,   55.55555556,   56.56565657,   57.57575758,
+          58.58585859,   59.5959596 ],
+       [  60.60606061,   61.61616162,   62.62626263,   63.63636364,
+          64.64646465,   65.65656566,   66.66666667,   67.67676768,
+          68.68686869,   69.6969697 ],
+       [  70.70707071,   71.71717172,   72.72727273,   73.73737374,
+          74.74747475,   75.75757576,   76.76767677,   77.77777778,
+          78.78787879,   79.7979798 ],
+       [  80.80808081,   81.81818182,   82.82828283,   83.83838384,
+          84.84848485,   85.85858586,   86.86868687,   87.87878788,
+          88.88888889,   89.8989899 ],
+       [  90.90909091,   91.91919192,   92.92929293,   93.93939394,
+          94.94949495,   95.95959596,   96.96969697,   97.97979798,
+          98.98989899,  100.        ]])
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Logical-indexing">Logical indexing<a class="anchor-link" href="#Logical-indexing">&#182;</a></h4>
+</div>
+
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[45]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">A</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">25</span><span class="p">))</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">A</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[45]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+array([[ 0,  1,  2,  3,  4],
+       [ 5,  6,  7,  8,  9],
+       [10, 11, 12, 13, 14],
+       [15, 16, 17, 18, 19],
+       [20, 21, 22, 23, 24]])
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[48]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">Ind</span> <span class="o">=</span> <span class="n">A</span> <span class="o">&lt;</span> <span class="mi">10</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[49]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">A</span><span class="p">[</span><span class="n">Ind</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[49]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Slices">Slices<a class="anchor-link" href="#Slices">&#182;</a></h4>
+</div>
+
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[50]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">A</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[50]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+13
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[51]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">A</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[51]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+array([[ 0,  1,  2,  3,  4],
+       [ 5,  6,  7,  8,  9],
+       [10, 11, 12, 13, 14],
+       [15, 16, 17, 18, 19],
+       [20, 21, 22, 23, 24]])
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[52]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[52]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+array([[1, 2, 3],
+       [6, 7, 8]])
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[53]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[53]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+array([[ 0,  2,  4],
+       [10, 12, 14],
+       [20, 22, 24]])
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Vectorized-computation">Vectorized computation<a class="anchor-link" href="#Vectorized-computation">&#182;</a></h2>
+</div>
+
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[54]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">A</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">25</span><span class="p">))</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">25</span><span class="p">)])</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Term-by-term-sum">Term by term sum<a class="anchor-link" href="#Term-by-term-sum">&#182;</a></h4>
+</div>
+
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[55]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">A</span> <span class="o">+</span> <span class="n">B</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[55]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+array([[  0,   2,   6,  12,  20],
+       [ 30,  42,  56,  72,  90],
+       [110, 132, 156, 182, 210],
+       [240, 272, 306, 342, 380],
+       [420, 462, 506, 552, 600]])
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Term-by-term-multiplication">Term by term multiplication<a class="anchor-link" href="#Term-by-term-multiplication">&#182;</a></h4>
+</div>
+
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[56]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">A</span> <span class="o">*</span> <span class="n">B</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[56]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+array([[    0,     1,     8,    27,    64],
+       [  125,   216,   343,   512,   729],
+       [ 1000,  1331,  1728,  2197,  2744],
+       [ 3375,  4096,  4913,  5832,  6859],
+       [ 8000,  9261, 10648, 12167, 13824]])
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Apply-math-functions-on-the-matrix-as-whole">Apply math functions on the matrix as whole<a class="anchor-link" href="#Apply-math-functions-on-the-matrix-as-whole">&#182;</a></h4>
+</div>
+
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[58]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">cos</span><span class="p">,</span> <span class="n">exp</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[62]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">cos</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="n">B</span><span class="p">)</span> <span class="o">-</span> <span class="n">A</span> <span class="o">/</span> <span class="mf">3.0</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[62]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+array([[  1.00000000e+000,   1.13536061e+000,  -2.33875141e+001,
+         -8.02299229e+003,  -5.80835079e+006],
+       [  2.04250671e+010,   4.13951643e+015,   1.43795288e+021,
+         -9.07214402e+026,  -1.37225084e+035],
+       [ -2.25552256e+043,   1.56896799e+050,   2.91522907e+062,
+          2.25729649e+073,   1.80969420e+084],
+       [ -3.95269810e+097,  -1.44743303e+111,  -8.92680071e+124,
+          3.39753879e+140,   5.96176056e+156],
+       [  2.13078812e+173,  -1.82992151e+191,  -1.57947308e+210,
+         -2.94016740e+229,   6.04186125e+249]])
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div></p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
     </section>
+
         </div>
         <div class="col-sm-3 well well-sm" id="sidebar">
 

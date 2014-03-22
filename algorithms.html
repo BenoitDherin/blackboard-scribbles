@@ -3,7 +3,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>iPython Notebook Scribbles - Tags</title>
+    <title>Algorithms</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -1717,10 +1717,10 @@ init_mathjax();
 
 
     <!-- Open Graph tags -->
-            <meta property="og:type" content="website"/>
-            <meta property="og:title" content="iPython Notebook Scribbles"/>
-            <meta property="og:url" content="http://benoitdherin.github.io/blackboard-scribbles"/>
-            <meta property="og:description" content="iPython Notebook Scribbles"/>
+            <meta property="og:type" content="article"/>
+            <meta property="og:title" content="Algorithms"/>
+            <meta property="og:url" content="http://benoitdherin.github.io/blackboard-scribbles/algorithms.html"/>
+            <meta property="og:description" content="Algorithms¶ Definition: An algorithm is a concrete way (think a concrete recipe) to implement a function, i.e, to link a given input to a desired output. Remark: You may have different algorithms implementing the same function. Some may be better than other in terms of the the output precision ..."/>
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="http://benoitdherin.github.io/blackboard-scribbles/theme/css/bootstrap.min.css" type="text/css"/>
@@ -1787,11 +1787,639 @@ iPython Notebook Scribbles            </a>
     <div class="row">
         <div class="col-sm-9">
 
-    <section id="tags">
-        <h1>Tags for iPython Notebook Scribbles</h1>
-        <div class="panel-group" id="accordion">        </div>
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://benoitdherin.github.io/blackboard-scribbles/algorithms.html"
+                       rel="bookmark"
+                       title="Permalink to Algorithms">
+                        Algorithms
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-03-19T00:00:00">Wed 19 March 2014</time>
+    </span>
 
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Algorithms">Algorithms<a class="anchor-link" href="#Algorithms">&#182;</a></h1>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Definition:</strong> An <em>algorithm</em> is a concrete way (think a concrete recipe) to implement a function, i.e, to link a given input to a desired output.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Remark:</strong> You may have different algorithms implementing the same function. Some may be better than other in terms of the the output precision, execution speed, easiness of implementation, readability, etc...</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In programming, you have essentially two main tools to implement an algorithms:</p>
+<ul>
+<li><strong>branching mechanisms</strong>, which constitute the logical brain of the algorithm</li>
+<li><strong>looping mechanisms</strong>, which constitute the algorithm muscles</li>
+</ul>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Branching-mechanisms-(Brain)">Branching mechanisms (Brain)<a class="anchor-link" href="#Branching-mechanisms-(Brain)">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Implementing-a-simple-choice-depending-on-a-logical-condition">Implementing a simple choice depending on a logical condition<a class="anchor-link" href="#Implementing-a-simple-choice-depending-on-a-logical-condition">&#182;</a></h3>
+</div>
+
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="k">def</span> <span class="nf">guessWhatIamThinking</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">8</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s">&#39;You win!&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s">&#39;you loose&#39;</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">guessWhatIamThinking</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Implementing-a-cascading-series-of-options">Implementing a cascading series of options<a class="anchor-link" href="#Implementing-a-cascading-series-of-options">&#182;</a></h3>
+</div>
+
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="k">def</span> <span class="nf">parseOptions</span><span class="p">(</span><span class="n">option</span><span class="p">):</span>
+    
+    <span class="k">if</span> <span class="n">option</span> <span class="o">==</span> <span class="s">&#39;a&#39;</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s">&#39;the option a has been chosen&#39;</span>
+    <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="s">&#39;b&#39;</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s">&#39;the chosen option is b&#39;</span>
+    <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="s">&#39;c&#39;</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s">&#39;the chosen option is c&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s">&#39;No options has been choosen&#39;</span>
+        
+        
+<span class="n">parseOptions</span><span class="p">(</span><span class="s">&#39;c&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Looping-mechanisms-(Muscles)">Looping mechanisms (Muscles)<a class="anchor-link" href="#Looping-mechanisms-(Muscles)">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Looping-over-the-integers">Looping over the integers<a class="anchor-link" href="#Looping-over-the-integers">&#182;</a></h3>
+</div>
+
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">tdef</span> <span class="n">startGame</span><span class="p">(</span><span class="n">numberOfPlay</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numberOfPlay</span><span class="p">):</span>
+        <span class="n">userInput</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">raw_input</span><span class="p">(</span><span class="s">&#39;What I am thinking? &#39;</span><span class="p">))</span>
+        <span class="n">guessWhatIamThinking</span><span class="p">(</span><span class="n">userInput</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s">&#39;Game Over&#39;</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">startGame</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Looping-over-string-letters">Looping over string letters<a class="anchor-link" href="#Looping-over-string-letters">&#182;</a></h3>
+</div>
+
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="k">def</span> <span class="nf">nucleotideCount</span><span class="p">(</span><span class="n">DNA</span><span class="p">):</span>
+    <span class="n">numA</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">numC</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">numG</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">numT</span> <span class="o">=</span><span class="mi">0</span>
+    <span class="k">for</span> <span class="n">nucleotide</span> <span class="ow">in</span> <span class="n">DNA</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">nucleotide</span> <span class="o">==</span> <span class="s">&#39;A&#39;</span><span class="p">:</span>
+            <span class="n">numA</span> <span class="o">=</span> <span class="n">numA</span> <span class="o">+</span> <span class="mi">1</span> 
+        <span class="k">elif</span> <span class="n">nucleotide</span> <span class="o">==</span> <span class="s">&#39;C&#39;</span><span class="p">:</span>
+            <span class="n">numC</span> <span class="o">=</span> <span class="n">numC</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">nucleotide</span> <span class="o">==</span> <span class="s">&#39;T&#39;</span><span class="p">:</span>
+            <span class="n">numT</span> <span class="o">=</span> <span class="n">numT</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">nucleotide</span> <span class="o">==</span> <span class="s">&#39;G&#39;</span><span class="p">:</span>
+            <span class="n">numG</span> <span class="o">=</span> <span class="n">numG</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s">&quot;&quot;&quot;An unfortunate mutation has occurred, </span>
+<span class="s">            or this DNA is not of terrestrial origin&quot;&quot;&quot;</span>
+            
+    <span class="k">print</span> <span class="s">&#39;Number of A is &#39;</span><span class="p">,</span> <span class="n">numA</span>
+    <span class="k">print</span> <span class="s">&#39;Number of C is &#39;</span><span class="p">,</span> <span class="n">numC</span>
+    <span class="k">print</span> <span class="s">&#39;Number of G is &#39;</span><span class="p">,</span> <span class="n">numG</span>
+    <span class="k">print</span> <span class="s">&#39;Number of T is &#39;</span><span class="p">,</span> <span class="n">numT</span>
+
+    
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">dna</span> <span class="o">=</span> <span class="s">&#39;AACCGGTT&#39;</span>
+<span class="n">nucleotideCount</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Looping-over-lists">Looping over lists<a class="anchor-link" href="#Looping-over-lists">&#182;</a></h3>
+</div>
+
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">myList</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;hello&#39;</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mf">8.34</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">True</span> <span class="ow">and</span> <span class="bp">False</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="k">def</span> <span class="nf">listType</span><span class="p">(</span><span class="n">aList</span><span class="p">):</span>
+    
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">aList</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">item</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">listType</span><span class="p">(</span><span class="n">myList</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Conditinal-looping">Conditinal looping<a class="anchor-link" href="#Conditinal-looping">&#182;</a></h3>
+</div>
+
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="k">def</span> <span class="nf">sumFirstInteger</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">while</span> <span class="n">counter</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">result</span>  <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">counter</span>
+        <span class="n">counter</span> <span class="o">=</span> <span class="n">counter</span> <span class="o">+</span> <span class="mi">1</span>
+        
+    <span class="k">return</span> <span class="n">result</span>
+        
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">mySum</span> <span class="o">=</span> <span class="n">sumFirstInteger</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">mySum</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[10]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="k">def</span> <span class="nf">greetMe</span><span class="p">():</span>
+    
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        
+        <span class="n">userInput</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;What&#39;s your name? </span><span class="se">\n</span><span class="s">&gt;&quot;</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">userInput</span> <span class="o">==</span> <span class="s">&#39;quit&#39;</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s">&#39;Hello &#39;</span><span class="p">,</span> <span class="n">userInput</span>
+
+        
+        
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[11]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">greetMe</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+What&apos;s your name? 
+&gt;Antoine
+Hello  Antoine
+What&apos;s your name? 
+&gt;quit
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Data-structures-and-algorithms">Data structures and algorithms<a class="anchor-link" href="#Data-structures-and-algorithms">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Lists">Lists<a class="anchor-link" href="#Lists">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Definition:</strong> A list is a <em>ordered</em> sequence of possibly <em>inhomogeneous</em> elements. Python lists are the programmatic embodiement of the mathematical notion of \(n\)-tuple:</p>
+<p>\[a = (a_1, a_2, \dots, a_n)\in A_1 \times A_2 \times \cdots \times A_n,\]</p>
+<p>where the \(i^{th}\) element belongs to the set \(A_i\) (the sets being \(A_i\)s potentially disticts).</p>
+<p>In Python, one can use the same notation as in math, in which case the list elements won't be able to be modified after having been assigned. In the Python lingo, these constant lists are also called <em>tuples</em>.</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[4]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;Bob&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+<span class="n">a</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[4]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+(&apos;Bob&apos;, 32, True)
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To create <em>mutable</em> list (i.e. a list whose elements can be further modified), Python uses <em>square brackets</em> instead of parenthesis:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[3]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Marcel&#39;</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="bp">False</span><span class="p">]</span>
+<span class="n">b</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[3]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+[&apos;Marcel&apos;, 12, False]
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In math, one uses the <em>subscript</em> notation \(a_i\) to denote the \(i^{th}\) element of a list \(a\). Instead of that notation, Python uses the <em>square bracket operator</em> (caution: in Python indices start at zero):</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[9]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[9]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+True
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[10]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">b</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_pyerr">
+<pre>
+<span class="ansired">---------------------------------------------------------------------------</span>
+<span class="ansired">IndexError</span>                                Traceback (most recent call last)
+<span class="ansigreen">&lt;ipython-input-10-0a402005bccb&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">----&gt; 1</span><span class="ansired"> </span>b<span class="ansiblue">[</span><span class="ansicyan">3</span><span class="ansiblue">]</span><span class="ansiblue"></span>
+
+<span class="ansired">IndexError</span>: list index out of range</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Observed that elements from a Python tuple can be retrived but not reassigned, as opposed to Python lists, which is why Python list are called <em>mutable</em> and Python tuples are called <em>immutable</em>:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[8]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb">
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb">
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Algorithmically, one may be interseted in lists for various reasons:</p>
+<ul>
+<li><p>looping over elements (as we have already seen)</p></li>
+<li><p>retrieving <em>sublists</em> of a given lists</p></li>
+<li><p>sorting the list elements according to a particular criterium</p></li>
+</ul>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Sublists</strong></p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+One retrieves from a given Python's list, say <code>my_list</code>, a sublist of consecutive indices by indicating the <strong>sublist range or &quot;slice&quot;:</strong>
+<pre><code>my_list[3:6]</code></pre>
+returns the sublist
+<pre><code>[my_list[3], my_list[4], my_list[5]]</code></pre>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb">
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The function <code>len(my_list)</code> returns the <strong>length</strong> of my_list</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb">
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>The range \([m:n]\) is <strong>open-ended</strong>: element \(m\) is included but not the element \(n\)</li>
+<li>\([:n]\) is a shorthand for \([0:n]\)</li>
+<li>\([m:]\) is a shorthand for \([m:n]\) where \(n\) is the list lenght</li>
+<li>Negative numbers can also be used to indicate positions and ranges:</li>
+<li><code> my_list[-1] </code> is the last element of the list</li>
+<li><code> my_list[-2] </code> is the element before the last element, etc.</li>
+<li>etc.</li>
+</ul>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Sorting</strong></p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Dictionaries">Dictionaries<a class="anchor-link" href="#Dictionaries">&#182;</a></h3>
+</div>
+
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb">
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Sets">Sets<a class="anchor-link" href="#Sets">&#182;</a></h3>
+</div>
+
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb">
+</pre></div>
+
+</div>
+</div>
+
+</div></p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
     </section>
+
         </div>
         <div class="col-sm-3 well well-sm" id="sidebar">
 
